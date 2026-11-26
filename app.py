@@ -116,7 +116,7 @@ fig4.update_xaxes(
 )
 
 st.plotly_chart(fig4, use_container_width=True)
-    st.caption(
+st.caption(
         "La disponibilidad de registros cambia entre años; "
         "la tendencia debe interpretarse teniendo en cuenta esa cobertura desigual."
     )

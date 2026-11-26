@@ -139,4 +139,4 @@ Estos resultados muestran que las fuentes de energía tienen características di
 
 Se recomienda comparar las fuentes energéticas considerando tanto la cantidad de plantas como su capacidad instalada y generación. También es conveniente analizar los resultados por país y tipo de combustible, evitando tomar decisiones únicamente con promedios, ya que existen plantas con capacidades muy diferentes. Esta información puede servir como punto de partida para identificar oportunidades de análisis y comprender mejor la diversidad de las tecnologías de generación eléctrica.
 
-
+q

@@ -39,10 +39,26 @@ filtered = df[
 st.subheader("Exploración de datos")
 metric_data = filtered["capacity_mw"].dropna()
 m1, m2, m3, m4 = st.columns(4)
-m1.metric("Registros filtrados", f"{len(filtered):,}")
-m2.metric("Capacidad promedio", f"{metric_data.mean():,.2f} MW" if len(metric_data) else "N/D")
-m3.metric("Desviación estándar", f"{metric_data.std():,.2f} MW" if len(metric_data) > 1 else "N/D")
-m4.metric("Capacidad total", f"{metric_data.sum():,.2f} MW" if len(metric_data) else "N/D")
+
+m1.metric(
+    "Registros filtrados",
+    f"{len(filtered):,}"
+)
+
+m2.metric(
+    "Capacidad promedio",
+    f"{metric_data.mean():,.0f} MW" if len(metric_data) else "N/D"
+)
+
+m3.metric(
+    "Desviación estándar",
+    f"{metric_data.std():,.0f} MW" if len(metric_data) > 1 else "N/D"
+)
+
+m4.metric(
+    "Capacidad total",
+    f"{metric_data.sum():,.0f} MW" if len(metric_data) else "N/D"
+))
 
 st.markdown("### Tabla de datos filtrados")
 st.dataframe(filtered, use_container_width=True, height=320)

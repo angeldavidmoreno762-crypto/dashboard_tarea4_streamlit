@@ -123,20 +123,39 @@ st.markdown("""
 """)
 st.caption("Aplicación académica elaborada para la Tarea 4. Los resultados se actualizan al cambiar los filtros.")
 
-##¿Qué analicé?
+st.subheader("Interpretación de resultados")
 
-Se analizó una base de datos mundial de plantas eléctricas que contiene información sobre su ubicación, tipo de combustible, capacidad instalada y generación de energía. El propósito fue explorar cómo se distribuyen las plantas según su fuente energética y conocer las diferencias entre sus capacidades.
+st.markdown("""
+### ¿Qué analicé?
 
-##¿Qué encontré?
+Se analizó una base de datos mundial de plantas eléctricas que contiene
+información sobre su ubicación, tipo de combustible, capacidad instalada
+y generación de energía. El propósito fue explorar y comparar las
+características de las diferentes fuentes energéticas.
 
-La energía hidroeléctrica presenta el mayor número de registros en el conjunto de datos analizado, seguida por otras fuentes como solar y eólica. También se observa que las plantas de gas presentan una capacidad instalada promedio superior a las plantas hidroeléctricas. Adicionalmente, los gráficos permiten identificar diferencias importantes entre las capacidades de las plantas y algunos valores considerablemente altos.
+### ¿Qué encontré?
 
-##¿Qué significa?
+La energía hidroeléctrica presenta el mayor número de registros en el
+conjunto de datos analizado, seguida por otras fuentes como solar y eólica.
+También se observa que las plantas de gas presentan una capacidad instalada
+promedio superior a las plantas hidroeléctricas, según la comparación
+estadística realizada.
 
-Estos resultados muestran que las fuentes de energía tienen características diferentes en cuanto al número de instalaciones y su capacidad de producción. Una mayor cantidad de plantas no necesariamente significa que estas tengan mayor capacidad individual. Asimismo, la relación observada entre capacidad instalada y generación estimada permite explorar tendencias, pero no demuestra por sí sola que una variable sea la causa de la otra.
+### ¿Qué significa?
 
-##¿Qué se recomendaría?
+Estos resultados muestran que las fuentes de energía tienen características
+diferentes en cuanto al número de instalaciones y su capacidad de producción.
+Una mayor cantidad de plantas no necesariamente significa una mayor capacidad
+instalada total o individual.
 
-Se recomienda comparar las fuentes energéticas considerando tanto la cantidad de plantas como su capacidad instalada y generación. También es conveniente analizar los resultados por país y tipo de combustible, evitando tomar decisiones únicamente con promedios, ya que existen plantas con capacidades muy diferentes. Esta información puede servir como punto de partida para identificar oportunidades de análisis y comprender mejor la diversidad de las tecnologías de generación eléctrica.
+La prueba estadística de Welch permitió identificar una diferencia
+estadísticamente significativa entre la capacidad instalada promedio de las
+plantas Hydro y Gas, considerando un nivel de significancia de 0,05.
 
-q
+### ¿Qué se recomendaría?
+
+Se recomienda comparar las fuentes energéticas considerando tanto la cantidad
+de plantas como su capacidad instalada y generación. También es conveniente
+analizar los resultados utilizando los filtros interactivos del dashboard,
+para identificar patrones y diferencias entre las tecnologías energéticas.
+""")

@@ -83,13 +83,21 @@ with st.container():
         st.plotly_chart(fig3, use_container_width=True)
 
 # Optional temporal graph from the notebook's yearly generation variables
-year_cols = ["generation_gwh_2013", "generation_gwh_2014", "generation_gwh_2015", "generation_gwh_2016"]
+# Gráfica temporal de generación registrada
+year_cols = [
+    "generation_gwh_2013",
+    "generation_gwh_2014",
+    "generation_gwh_2015",
+    "generation_gwh_2016"
+]
 
 if all(col in filtered.columns for col in year_cols):
+
     yearly = pd.DataFrame({
         "Año": ["2013", "2014", "2015", "2016"],
-        "Generación registrada (GWh)": [filtered[col].sum(skipna=True) for col in year_cols],
-        "Registros disponibles": [filtered[col].notna().sum() for col in year_cols]
+        "Generación registrada (GWh)": [
+            filtered[col].sum(skipna=True) for col in year_cols
+        ]
     })
 
     fig4 = px.line(
@@ -99,11 +107,13 @@ if all(col in filtered.columns for col in year_cols):
         markers=True,
         title="Evolución de la generación registrada (2013–2016)"
     )
-    
-fig4.update_xaxes(type="category")
+
     st.plotly_chart(fig4, use_container_width=True)
 
-    st.caption("La disponibilidad de registros cambia entre años; la tendencia debe interpretarse teniendo en cuenta esa cobertura desigual.")
+    st.caption(
+        "La disponibilidad de registros cambia entre años; "
+        "la tendencia debe interpretarse teniendo en cuenta esa cobertura desigual."
+    )
 
 st.subheader("Validación estadística: prueba t de Welch")
 st.write("Se compara la capacidad instalada promedio entre plantas Hydro y Gas. La prueba usa los datos dentro del rango de capacidad seleccionado y no depende del filtro de combustible, para mantener ambos grupos comparables.")

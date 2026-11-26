@@ -100,15 +100,22 @@ if all(col in filtered.columns for col in year_cols):
         ]
     })
 
-    fig4 = px.line(
-        yearly,
-        x="Año",
-        y="Generación registrada (GWh)",
-        markers=True,
-        title="Evolución de la generación registrada (2013–2016)"
-    )
+   fig4 = px.line(
+    yearly,
+    x="Año",
+    y="Generación registrada (GWh)",
+    markers=True,
+    title="Evolución de la generación registrada (2013–2016)"
+)
 
-    st.plotly_chart(fig4, use_container_width=True)
+fig4.update_xaxes(
+    type="category",
+    tickmode="array",
+    tickvals=["2013", "2014", "2015", "2016"],
+    ticktext=["2013", "2014", "2015", "2016"]
+)
+
+st.plotly_chart(fig4, use_container_width=True)
 
     st.caption(
         "La disponibilidad de registros cambia entre años; "

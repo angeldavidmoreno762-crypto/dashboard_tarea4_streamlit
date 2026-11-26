@@ -58,7 +58,7 @@ m3.metric(
 m4.metric(
     "Capacidad total",
     f"{metric_data.sum():,.0f} MW" if len(metric_data) else "N/D"
-))
+)
 
 st.markdown("### Tabla de datos filtrados")
 st.dataframe(filtered, use_container_width=True, height=320)

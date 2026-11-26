@@ -122,3 +122,21 @@ st.markdown("""
 - Los valores extremos de capacidad pueden influir en promedios y escalas de los gráficos.
 """)
 st.caption("Aplicación académica elaborada para la Tarea 4. Los resultados se actualizan al cambiar los filtros.")
+
+##¿Qué analicé?
+
+Se analizó una base de datos mundial de plantas eléctricas que contiene información sobre su ubicación, tipo de combustible, capacidad instalada y generación de energía. El propósito fue explorar cómo se distribuyen las plantas según su fuente energética y conocer las diferencias entre sus capacidades.
+
+##¿Qué encontré?
+
+La energía hidroeléctrica presenta el mayor número de registros en el conjunto de datos analizado, seguida por otras fuentes como solar y eólica. También se observa que las plantas de gas presentan una capacidad instalada promedio superior a las plantas hidroeléctricas. Adicionalmente, los gráficos permiten identificar diferencias importantes entre las capacidades de las plantas y algunos valores considerablemente altos.
+
+##¿Qué significa?
+
+Estos resultados muestran que las fuentes de energía tienen características diferentes en cuanto al número de instalaciones y su capacidad de producción. Una mayor cantidad de plantas no necesariamente significa que estas tengan mayor capacidad individual. Asimismo, la relación observada entre capacidad instalada y generación estimada permite explorar tendencias, pero no demuestra por sí sola que una variable sea la causa de la otra.
+
+##¿Qué se recomendaría?
+
+Se recomienda comparar las fuentes energéticas considerando tanto la cantidad de plantas como su capacidad instalada y generación. También es conveniente analizar los resultados por país y tipo de combustible, evitando tomar decisiones únicamente con promedios, ya que existen plantas con capacidades muy diferentes. Esta información puede servir como punto de partida para identificar oportunidades de análisis y comprender mejor la diversidad de las tecnologías de generación eléctrica.
+
+

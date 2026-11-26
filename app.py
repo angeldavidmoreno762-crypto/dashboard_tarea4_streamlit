@@ -99,7 +99,8 @@ if all(col in filtered.columns for col in year_cols):
         markers=True,
         title="Evolución de la generación registrada (2013–2016)"
     )
-
+    
+fig4.update_xaxes(type="category")
     st.plotly_chart(fig4, use_container_width=True)
 
     st.caption("La disponibilidad de registros cambia entre años; la tendencia debe interpretarse teniendo en cuenta esa cobertura desigual.")

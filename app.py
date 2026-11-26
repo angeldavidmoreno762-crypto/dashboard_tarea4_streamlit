@@ -4,7 +4,7 @@ import numpy as np
 import plotly.express as px
 from scipy import stats
 
-st.set_page_config(page_title="Global Power Plant Database", page_icon="⚡", layout="wide")
+st.set_page_config(page_title="Global Power Plant Database", layout="wide")
 
 @st.cache_data
 def load_data():
@@ -17,7 +17,7 @@ def load_data():
 
 df = load_data()
 
-st.title("⚡ Análisis exploratorio de plantas eléctricas")
+st.title("Análisis exploratorio de plantas eléctricas")
 st.caption("Dataset: Global Power Plant Database | Exploración de capacidad instalada, combustibles y generación estimada.")
 
 # Sidebar filters
@@ -84,15 +84,24 @@ with st.container():
 
 # Optional temporal graph from the notebook's yearly generation variables
 year_cols = ["generation_gwh_2013", "generation_gwh_2014", "generation_gwh_2015", "generation_gwh_2016"]
+
 if all(col in filtered.columns for col in year_cols):
     yearly = pd.DataFrame({
-        "Año": [2013, 2014, 2015, 2016],
+        "Año": ["2013", "2014", "2015", "2016"],
         "Generación registrada (GWh)": [filtered[col].sum(skipna=True) for col in year_cols],
         "Registros disponibles": [filtered[col].notna().sum() for col in year_cols]
     })
-    fig4 = px.line(yearly, x="Año", y="Generación registrada (GWh)", markers=True,
-                    title="Evolución de la generación registrada (2013–2016)")
+
+    fig4 = px.line(
+        yearly,
+        x="Año",
+        y="Generación registrada (GWh)",
+        markers=True,
+        title="Evolución de la generación registrada (2013–2016)"
+    )
+
     st.plotly_chart(fig4, use_container_width=True)
+
     st.caption("La disponibilidad de registros cambia entre años; la tendencia debe interpretarse teniendo en cuenta esa cobertura desigual.")
 
 st.subheader("Validación estadística: prueba t de Welch")

@@ -100,7 +100,7 @@ if all(col in filtered.columns for col in year_cols):
         ]
     })
 
-   fig4 = px.line(
+fig4 = px.line(
     yearly,
     x="Año",
     y="Generación registrada (GWh)",
@@ -116,7 +116,6 @@ fig4.update_xaxes(
 )
 
 st.plotly_chart(fig4, use_container_width=True)
-
     st.caption(
         "La disponibilidad de registros cambia entre años; "
         "la tendencia debe interpretarse teniendo en cuenta esa cobertura desigual."
